@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TALANTA — Advisory &amp; Transformation</title>
+<meta name="description" content="TALANTA Advisory & Transformation helps organizations assess challenges, align strategy with execution, and achieve sustainable business results.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TALANTA DESIGN TOKENS — derived from brand guidelines
+   ============================================================ */
+:root{
+  --navy:      #0C2340;   /* TALANTA Navy — HEX per brand guidelines */
+  --navy-soft: #14335C;   /* derived tint for layering on navy */
+  --navy-deep: #081729;   /* derived shade for footer */
+  --gold:      #C8A95B;   /* TALANTA Gold — HEX per brand guidelines */
+  --gold-dim:  rgba(200,169,91,.35);
+  --charcoal:  #444444;   /* supporting */
+  --gray:      #F5F5F5;   /* supporting */
+  --white:     #FFFFFF;
+
+  --font-latin:  'Montserrat', -apple-system, sans-serif;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Montserrat', sans-serif;
+
+  --measure: 62ch;
+  --radius: 2px;          /* near-square: institutional, not app-like */
+  --pad-inline: clamp(1.25rem, 5vw, 4rem);
+  --section-pad: clamp(4rem, 9vw, 7.5rem);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.01ms !important; transition-duration:.01ms !important; }
+}
+
+body{
+  font-family: var(--font-latin);
+  font-weight: 400;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+html[lang="ar"] body{ font-family: var(--font-arabic); line-height: 1.9; }
+
+/* Keep the Latin wordmark LTR even in RTL mode */
+.latin{ direction: ltr; unicode-bidi: isolate; font-family: var(--font-latin); }
+
+img, svg{ display:block; max-width:100%; }
+
+a{ color: inherit; }
+:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.wrap{ max-width: 1180px; margin-inline:auto; padding-inline: var(--pad-inline); }
+
+/* ============================================================
+   TYPE ROLES — per brand hierarchy
+   ============================================================ */
+.eyebrow{
+  font-family: var(--font-latin);
+  font-weight: 500;                 /* Montserrat Medium: descriptor role */
+  font-size: .72rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+html[lang="ar"] .eyebrow{ font-family: var(--font-arabic); letter-spacing: .12em; font-weight:500; }
+
+h1,h2,h3{
+  font-weight: 800;                 /* Montserrat ExtraBold: display role */
+  color: var(--navy);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3{
+  font-weight: 700; letter-spacing: 0; line-height: 1.45;
+}
+
+.method-label{
+  font-weight: 600;                 /* Montserrat SemiBold: methodology role */
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  font-size: .78rem;
+}
+html[lang="ar"] .method-label{ letter-spacing: .08em; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-block;
+  padding: .95rem 2.1rem;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease, border-color .25s ease;
+}
+html[lang="ar"] .btn{ letter-spacing: .04em; font-size: .95rem; }
+.btn-gold{ background: var(--gold); color: var(--navy); }
+.btn-gold:hover{ background: var(--white); color: var(--navy); }
+.btn-outline{ background: transparent; color: var(--white); border-color: rgba(255,255,255,.45); }
+.btn-outline:hover{ border-color: var(--gold); color: var(--gold); }
+.btn-navy{ background: var(--navy); color: var(--white); }
+.btn-navy:hover{ background: var(--navy-soft); }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position: sticky; top:0; z-index:50;
+  background: var(--navy);
+  border-block-end: 1px solid rgba(200,169,91,.25);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 1.5rem;
+  padding-block: 1.05rem;
+}
+.brand{
+  display:flex; flex-direction:column; gap:.1rem;
+  text-decoration:none;
+}
+.brand-word{
+  font-family: var(--font-latin);
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: .34em;
+  color: var(--white);
+}
+.brand-word .a{ color: var(--gold); }
+.brand-desc{
+  font-family: var(--font-latin);
+  font-weight: 500;
+  font-size: .5rem;
+  letter-spacing: .38em;
+  color: rgba(255,255,255,.65);
+  text-transform: uppercase;
+}
+.main-nav{ display:flex; align-items:center; gap: clamp(1rem, 2.5vw, 2.2rem); }
+.main-nav a{
+  font-size: .8rem; font-weight: 500;
+  color: rgba(255,255,255,.85);
+  text-decoration: none;
+  letter-spacing: .06em;
+  transition: color .2s ease;
+}
+.main-nav a:hover{ color: var(--gold); }
+.lang-toggle{
+  font-family: var(--font-arabic);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.4);
+  color: var(--white);
+  padding: .45rem 1rem;
+  font-size: .8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+.lang-toggle:hover{ border-color: var(--gold); color: var(--gold); }
+.nav-cta{ display:none; }
+@media (min-width: 900px){ .nav-cta{ display:inline-block; padding:.6rem 1.3rem; font-size:.72rem; } }
+@media (max-width: 760px){ .main-nav .nav-link{ display:none; } }
+
+/* ============================================================
+   HERO — the signature: wordmark with gold A's annotated
+   ============================================================ */
+.hero{
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(200,169,91,.12), transparent 60%),
+    var(--navy);
+  color: var(--white);
+  padding-block: clamp(4.5rem, 10vw, 8rem) clamp(4.5rem, 9vw, 7rem);
+  overflow: hidden;
+}
+.hero .eyebrow{ margin-block-end: 2.4rem; }
+
+/* Wordmark: each letter a column; the A columns carry pillar labels */
+.wordmark{
+  display:flex;
+  align-items:flex-start;
+  gap: clamp(.35rem, 2.4vw, 1.6rem);
+  margin-block-end: clamp(2.2rem, 5vw, 3.5rem);
+}
+.wm-letter{
+  display:flex; flex-direction:column; align-items:center;
+  font-family: var(--font-latin);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 8.5vw, 6.2rem);
+  line-height: 1;
+  color: var(--white);
+}
+.wm-letter.gold{ color: var(--gold); }
+.wm-tick{
+  width: 1px; height: 2rem;
+  background: var(--gold-dim);
+  margin-block-start: 1rem;
+}
+.wm-pillar{
+  margin-block-start: .55rem;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+html[lang="ar"] .wm-pillar{ font-family: var(--font-arabic); letter-spacing: .05em; font-size: .72rem; }
+.wm-letter:not(.gold) .wm-tick,
+.wm-letter:not(.gold) .wm-pillar{ visibility: hidden; }
+@media (max-width: 620px){
+  .wm-tick, .wm-pillar{ display:none; }
+  .hero .method-line{ display:block; }
+}
+.method-line{
+  display:none;
+  color: var(--gold);
+  margin-block-end: 2rem;
+}
+
+.hero h1{
+  color: var(--white);
+  font-size: clamp(1.9rem, 4.6vw, 3.4rem);
+  max-width: 18ch;
+  margin-block-end: 1.4rem;
+}
+.hero p{
+  max-width: var(--measure);
+  color: rgba(255,255,255,.82);
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  margin-block-end: 2.6rem;
+}
+.hero-actions{ display:flex; flex-wrap:wrap; gap: 1rem; }
+
+/* ============================================================
+   METHODOLOGY — the TALANTA formula (a true sequence)
+   ============================================================ */
+.methodology{ background: var(--white); padding-block: var(--section-pad); }
+.section-head{ max-width: 720px; margin-block-end: clamp(2.5rem, 6vw, 4rem); }
+.section-head .eyebrow{ display:block; margin-block-end: 1rem; }
+.section-head h2{ font-size: clamp(1.6rem, 3.4vw, 2.4rem); margin-block-end: 1rem; }
+
+.formula{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+}
+.pillar{ border-block-start: 3px solid var(--navy); padding-block-start: 1.6rem; transition: border-color .3s ease; }
+.pillar.is-lit{ border-block-start-color: var(--gold); }
+.pillar .step-num{
+  font-family: var(--font-latin);
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-block-end: .8rem;
+}
+.pillar h3{ font-size: 1.25rem; margin-block-end: .7rem; }
+.pillar p{ font-size: .95rem; }
+.formula .op{
+  align-self:center;
+  font-family: var(--font-latin);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--gold);
+  padding-block-start: 1.2rem;
+}
+.formula-result{
+  margin-block-start: clamp(2.5rem, 6vw, 4rem);
+  border-block-start: 1px solid #e4e4e4;
+  padding-block-start: 2rem;
+  display:flex; align-items:baseline; gap:1.2rem; flex-wrap:wrap;
+}
+.formula-result .equals{ font-weight:800; font-size:1.6rem; color:var(--gold); font-family:var(--font-latin); }
+.formula-result .brand-word{ color: var(--navy); font-size: 1.6rem; }
+.formula-result .tagline{ font-size:.95rem; color:var(--charcoal); }
+@media (max-width: 760px){
+  .formula{ grid-template-columns: 1fr; }
+  .formula .op{ display:none; }
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{ background: var(--gray); padding-block: var(--section-pad); }
+.svc-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.svc-card{
+  background: var(--white);
+  border-radius: var(--radius);
+  border-block-start: 3px solid var(--navy);
+  padding: 2.2rem 1.8rem;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.svc-card:hover{
+  border-block-start-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(12,35,64,.10);
+}
+.svc-card h3{ font-size: 1.05rem; margin-block-end: .7rem; }
+.svc-card p{ font-size: .92rem; }
+@media (prefers-reduced-motion: reduce){ .svc-card:hover{ transform:none; } }
+
+/* ============================================================
+   VALUES STRIP
+   ============================================================ */
+.values{ background: var(--navy); padding-block: clamp(2.6rem, 5vw, 3.6rem); }
+.values-inner{
+  display:flex; flex-wrap:wrap; justify-content:space-between;
+  gap: 1.2rem 2rem; align-items:center;
+}
+.values .method-label{ color: rgba(255,255,255,.9); }
+.values .dot{ color: var(--gold); font-size: .7rem; }
+@media (max-width: 640px){ .values-inner{ justify-content:center; } }
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band{ background: var(--white); padding-block: var(--section-pad); }
+.cta-box{
+  background: var(--navy);
+  border-radius: var(--radius);
+  padding: clamp(2.6rem, 6vw, 4.5rem);
+  position: relative;
+  overflow: hidden;
+}
+.cta-box::after{
+  content:"A";
+  position:absolute;
+  inset-inline-end: -0.05em;
+  inset-block-end: -0.35em;
+  font-family: var(--font-latin);
+  font-weight: 800;
+  font-size: clamp(10rem, 24vw, 18rem);
+  line-height: 1;
+  color: rgba(200,169,91,.10);
+  pointer-events:none;
+}
+.cta-box .eyebrow{ display:block; margin-block-end: 1.1rem; }
+.cta-box h2{ color: var(--white); font-size: clamp(1.6rem, 3.4vw, 2.4rem); max-width: 22ch; margin-block-end: 1rem; }
+.cta-box p{ color: rgba(255,255,255,.8); max-width: 54ch; margin-block-end: 2.2rem; }
+
+/* ============================================================
+   FOOTER — official brand signature
+   ============================================================ */
+.site-footer{ background: var(--navy-deep); color: rgba(255,255,255,.7); padding-block: clamp(3rem, 6vw, 4.5rem) 2rem; }
+.footer-grid{
+  display:grid; gap: 2.5rem;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  margin-block-end: 3rem;
+}
+.signature .brand-word{ font-size: 1.3rem; }
+.signature .brand-desc{ margin-block-start:.3rem; }
+.signature .method-label{ color: var(--gold); margin-block: 1.1rem .6rem; display:block; }
+.signature .sig-tagline{ font-size: .88rem; }
+.foot-col h4{
+  font-size: .72rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+  color: var(--gold); margin-block-end: 1.1rem;
+}
+html[lang="ar"] .foot-col h4{ letter-spacing:.06em; }
+.foot-col a{ display:block; font-size:.88rem; text-decoration:none; margin-block-end:.6rem; transition: color .2s ease; }
+.foot-col a:hover{ color: var(--gold); }
+.footer-base{
+  border-block-start: 1px solid rgba(255,255,255,.12);
+  padding-block-start: 1.4rem;
+  font-size: .78rem;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:.8rem;
+}
+@media (max-width: 760px){ .footer-grid{ grid-template-columns: 1fr; } }
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal{ opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; } }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#" class="brand" aria-label="TALANTA — Advisory and Transformation">
+      <span class="brand-word latin">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></span>
+      <span class="brand-desc latin">Advisory &amp; Transformation</span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a class="nav-link" href="#methodology" data-en="Methodology" data-ar="منهجيتنا">Methodology</a>
+      <a class="nav-link" href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+      <a class="nav-link" href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">عربي</button>
+      <a class="btn btn-gold nav-cta" href="#contact" data-en="Discovery Session" data-ar="جلسة استكشافية">Discovery Session</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" data-en="Advisory &amp; Transformation" data-ar="الاستشارات والتحول">Advisory &amp; Transformation</span>
+
+    <!-- Signature: wordmark with the three A's carrying the methodology -->
+    <div class="wordmark latin" role="img" aria-label="TALANTA — Assess, Align, Achieve">
+      <span class="wm-letter">T<span class="wm-tick"></span><span class="wm-pillar"></span></span>
+      <span class="wm-letter gold">A<span class="wm-tick"></span><span class="wm-pillar" data-en="Assess" data-ar="تقييم">Assess</span></span>
+      <span class="wm-letter">L<span class="wm-tick"></span><span class="wm-pillar"></span></span>
+      <span class="wm-letter gold">A<span class="wm-tick"></span><span class="wm-pillar" data-en="Align" data-ar="مواءمة">Align</span></span>
+      <span class="wm-letter">N<span class="wm-tick"></span><span class="wm-pillar"></span></span>
+      <span class="wm-letter">T<span class="wm-tick"></span><span class="wm-pillar"></span></span>
+      <span class="wm-letter gold">A<span class="wm-tick"></span><span class="wm-pillar" data-en="Achieve" data-ar="تحقيق">Achieve</span></span>
+    </div>
+    <span class="method-line method-label" data-en="Assess • Align • Achieve" data-ar="تقييم • مواءمة • تحقيق">Assess • Align • Achieve</span>
+
+    <h1 data-en="Aligning Ambition with Achievement" data-ar="مواءمة الطموح مع الإنجاز">Aligning Ambition with Achievement</h1>
+    <p data-en="We help organizations assess challenges, align strategy with execution, and achieve sustainable business results."
+       data-ar="نساعد المؤسسات على تقييم التحديات، ومواءمة الاستراتيجية مع التنفيذ، وتحقيق نتائج أعمال مستدامة.">
+      We help organizations assess challenges, align strategy with execution, and achieve sustainable business results.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#contact" data-en="Schedule a Discovery Session" data-ar="احجز جلسة استكشافية">Schedule a Discovery Session</a>
+      <a class="btn btn-outline" href="#methodology" data-en="Our Methodology" data-ar="منهجيتنا">Our Methodology</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHODOLOGY ================= -->
+<section class="methodology" id="methodology">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-en="The TALANTA Formula" data-ar="معادلة تالانتا">The TALANTA Formula</span>
+      <h2 data-en="A structured path from challenge to result" data-ar="مسار منهجي من التحدي إلى النتيجة">A structured path from challenge to result</h2>
+      <p data-en="Practical advice. Structured transformation. Sustainable results."
+         data-ar="استشارات عملية. تحوّل منهجي. نتائج مستدامة.">Practical advice. Structured transformation. Sustainable results.</p>
+    </div>
+
+    <div class="formula">
+      <div class="pillar reveal" data-a="0">
+        <div class="step-num latin">A</div>
+        <h3 data-en="Assess" data-ar="تقييم">Assess</h3>
+        <p data-en="Fact-based understanding of the current state — grounded in evidence, not assumption."
+           data-ar="فهم قائم على الحقائق للوضع الراهن — مبني على الأدلة لا الافتراضات.">
+           Fact-based understanding of the current state — grounded in evidence, not assumption.</p>
+      </div>
+      <div class="op latin" aria-hidden="true">+</div>
+      <div class="pillar reveal" data-a="1">
+        <div class="step-num latin">A</div>
+        <h3 data-en="Align" data-ar="مواءمة">Align</h3>
+        <p data-en="Connecting strategy, people, governance, and execution into one coherent direction."
+           data-ar="ربط الاستراتيجية والأفراد والحوكمة والتنفيذ في اتجاه واحد متكامل.">
+           Connecting strategy, people, governance, and execution into one coherent direction.</p>
+      </div>
+      <div class="op latin" aria-hidden="true">+</div>
+      <div class="pillar reveal" data-a="2">
+        <div class="step-num latin">A</div>
+        <h3 data-en="Achieve" data-ar="تحقيق">Achieve</h3>
+        <p data-en="Delivering measurable and sustainable outcomes that hold after we leave."
+           data-ar="تحقيق نتائج قابلة للقياس ومستدامة تدوم بعد انتهاء عملنا.">
+           Delivering measurable and sustainable outcomes that hold after we leave.</p>
+      </div>
+    </div>
+
+    <div class="formula-result reveal">
+      <span class="equals latin" aria-hidden="true">=</span>
+      <span class="brand-word latin">T<span class="a" style="color:var(--gold)">A</span>L<span style="color:var(--gold)">A</span>NT<span style="color:var(--gold)">A</span></span>
+      <span class="tagline" data-en="Aligning Ambition with Achievement" data-ar="مواءمة الطموح مع الإنجاز">Aligning Ambition with Achievement</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-en="What We Do" data-ar="ماذا نقدم">What We Do</span>
+      <h2 data-en="Services built for executive leadership" data-ar="خدمات مصممة للقيادات التنفيذية">Services built for executive leadership</h2>
+      <p data-en="We partner with leaders to transform strategy into results through structured advisory, disciplined execution, and measurable value creation."
+         data-ar="نعمل مع القادة على تحويل الاستراتيجية إلى نتائج من خلال استشارات منهجية وتنفيذ منضبط وخلق قيمة قابلة للقياس.">
+         We partner with leaders to transform strategy into results through structured advisory, disciplined execution, and measurable value creation.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <h3 data-en="Advisory" data-ar="الخدمات الاستشارية">Advisory</h3>
+        <p data-en="Trusted counsel to executive leadership on strategy, priorities, and critical decisions."
+           data-ar="مشورة موثوقة للقيادات التنفيذية في الاستراتيجية والأولويات والقرارات المصيرية.">
+           Trusted counsel to executive leadership on strategy, priorities, and critical decisions.</p>
+      </article>
+      <article class="svc-card reveal">
+        <h3 data-en="Transformation" data-ar="التحول المؤسسي">Transformation</h3>
+        <p data-en="Structured programs that move organizations from current state to target state."
+           data-ar="برامج منهجية تنقل المؤسسات من وضعها الراهن إلى الوضع المستهدف.">
+           Structured programs that move organizations from current state to target state.</p>
+      </article>
+      <article class="svc-card reveal">
+        <h3 data-en="Governance" data-ar="الحوكمة">Governance</h3>
+        <p data-en="Decision structures and accountability that keep strategy and execution connected."
+           data-ar="هياكل اتخاذ القرار والمساءلة التي تحافظ على الترابط بين الاستراتيجية والتنفيذ.">
+           Decision structures and accountability that keep strategy and execution connected.</p>
+      </article>
+      <article class="svc-card reveal">
+        <h3 data-en="Performance Excellence" data-ar="التميز في الأداء">Performance Excellence</h3>
+        <p data-en="Measurement, discipline, and continuous improvement toward sustainable results."
+           data-ar="القياس والانضباط والتحسين المستمر وصولاً إلى نتائج مستدامة.">
+           Measurement, discipline, and continuous improvement toward sustainable results.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUES STRIP ================= -->
+<section class="values" aria-label="Brand values">
+  <div class="wrap values-inner">
+    <span class="method-label" data-en="Trust" data-ar="الثقة">Trust</span><span class="dot" aria-hidden="true">◆</span>
+    <span class="method-label" data-en="Excellence" data-ar="التميز">Excellence</span><span class="dot" aria-hidden="true">◆</span>
+    <span class="method-label" data-en="Alignment" data-ar="المواءمة">Alignment</span><span class="dot" aria-hidden="true">◆</span>
+    <span class="method-label" data-en="Transformation" data-ar="التحول">Transformation</span><span class="dot" aria-hidden="true">◆</span>
+    <span class="method-label" data-en="Achievement" data-ar="الإنجاز">Achievement</span>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <span class="eyebrow" data-en="Start the Conversation" data-ar="ابدأ الحوار">Start the Conversation</span>
+      <h2 data-en="Ready to align ambition with achievement?" data-ar="هل أنتم مستعدون لمواءمة الطموح مع الإنجاز؟">Ready to align ambition with achievement?</h2>
+      <p data-en="A discovery session is a structured first step: we listen, assess where you stand, and outline what alignment would take."
+         data-ar="الجلسة الاستكشافية خطوة أولى منهجية: نستمع إليكم، ونقيّم وضعكم الحالي، ونحدد ملامح الطريق نحو المواءمة.">
+         A discovery session is a structured first step: we listen, assess where you stand, and outline what alignment would take.</p>
+      <a class="btn btn-gold" href="mailto:hello@talanta.example" data-en="Schedule a Discovery Session" data-ar="احجز جلسة استكشافية">Schedule a Discovery Session</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="signature">
+        <span class="brand-word latin">T<span class="a" style="color:var(--gold)">A</span>L<span style="color:var(--gold)">A</span>NT<span style="color:var(--gold)">A</span></span>
+        <span class="brand-desc latin">Advisory &amp; Transformation</span>
+        <span class="method-label latin">Assess • Align • Achieve</span>
+        <p class="sig-tagline" data-en="Aligning Ambition with Achievement" data-ar="مواءمة الطموح مع الإنجاز">Aligning Ambition with Achievement</p>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Explore" data-ar="استكشف">Explore</h4>
+        <a href="#methodology" data-en="Methodology" data-ar="منهجيتنا">Methodology</a>
+        <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+        <a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4 data-en="Contact" data-ar="التواصل">Contact</h4>
+        <a href="mailto:hello@talanta.example">hello@talanta.example</a>
+        <a href="#" data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span data-en="© 2026 TALANTA Advisory &amp; Transformation. All rights reserved." data-ar="© 2026 تالانتا للاستشارات والتحول. جميع الحقوق محفوظة.">© 2026 TALANTA Advisory &amp; Transformation. All rights reserved.</span>
+      <span class="latin">EN / AR</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Language toggle: swaps copy, direction, and font ---------- */
+(function(){
+  const html = document.documentElement;
+  const btn  = document.getElementById('langToggle');
+  let lang = 'en';
+
+  function apply(){
+    html.lang = lang;
+    html.dir  = (lang === 'ar') ? 'rtl' : 'ltr';
+    btn.textContent = (lang === 'ar') ? 'EN' : 'عربي';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const t = el.dataset[lang];
+      if (t !== undefined) el.innerHTML = t;
+    });
+    document.title = (lang === 'ar')
+      ? 'تالانتا — الاستشارات والتحول'
+      : 'TALANTA — Advisory & Transformation';
+  }
+
+  btn.addEventListener('click', () => { lang = (lang === 'en') ? 'ar' : 'en'; apply(); });
+})();
+
+/* ---------- Scroll reveal (respects reduced motion) ---------- */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ---------- Micro-interaction: hovering a gold A lights its pillar ---------- */
+(function(){
+  const goldLetters = document.querySelectorAll('.wm-letter.gold');
+  const pillars = document.querySelectorAll('.pillar');
+  goldLetters.forEach((el, i) => {
+    el.addEventListener('mouseenter', () => pillars[i] && pillars[i].classList.add('is-lit'));
+    el.addEventListener('mouseleave', () => pillars[i] && pillars[i].classList.remove('is-lit'));
+  });
+})();
+</script>
+</body>
+</html>

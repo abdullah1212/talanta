@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TALANTA — Homepage Concepts</title>
+<meta name="description" content="TALANTA Advisory & Transformation — homepage design concepts for review.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+/* self-contained switcher — no framework needed */
+:root{
+  --navy:#0C2340; --navy-deep:#081729; --gold:#C8A95B; --gold-dim:rgba(200,169,91,.35);
+}
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{
+  min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:3rem; padding:2rem 1.25rem;
+  font-family:'Montserrat',-apple-system,sans-serif;
+  background:radial-gradient(1100px 500px at 85% -10%, rgba(200,169,91,.12), transparent 60%), var(--navy);
+  color:#fff; -webkit-font-smoothing:antialiased;
+}
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+header{ text-align:center; }
+.brand{ font-weight:800; font-size:clamp(1.6rem,5vw,2.4rem); letter-spacing:.34em; }
+.brand .a{ color:var(--gold); }
+.brand-sub{ display:block; margin-top:.5rem; font-size:.62rem; font-weight:500; letter-spacing:.38em; text-transform:uppercase; color:rgba(255,255,255,.65); }
+.lede{ margin-top:1.5rem; font-size:.95rem; color:rgba(255,255,255,.75); max-width:44ch; }
+.concepts{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1.25rem; width:min(920px,100%); }
+.concept{
+  display:block; padding:1.75rem 1.5rem; text-decoration:none; color:#fff;
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14); border-top:3px solid var(--gold-dim);
+  border-radius:2px; transition:border-color .25s ease, background .25s ease;
+}
+.concept:hover{ border-color:var(--gold); background:rgba(255,255,255,.08); }
+.concept .num{ font-size:.62rem; font-weight:600; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); }
+.concept h2{ font-size:1.15rem; font-weight:800; margin:.6rem 0 .5rem; }
+.concept p{ font-size:.85rem; line-height:1.6; color:rgba(255,255,255,.72); }
+.concept .go{ display:inline-block; margin-top:1rem; font-size:.72rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+.concept .go::after{ content:"→"; margin-left:.4em; display:inline-block; transition:transform .3s; }
+.concept:hover .go::after{ transform:translateX(5px); }
+footer{ font-size:.72rem; color:rgba(255,255,255,.45); letter-spacing:.06em; text-align:center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></div>
+  <span class="brand-sub">Advisory &amp; Transformation</span>
+  <p class="lede">Homepage design concepts — pick a direction to explore.</p>
+</header>
+
+<nav class="concepts" aria-label="Concepts">
+  <a class="concept" href="talanta-homepage-bootstrap.html">
+    <span class="num">Current</span>
+    <h2>Bilingual Baseline</h2>
+    <p>The working homepage: Bootstrap, full English/Arabic toggle with RTL, contact form, scrollspy.</p>
+    <span class="go">View concept</span>
+  </a>
+  <a class="concept" href="talanta-cinematic.html">
+    <span class="num">Concept 01</span>
+    <h2>Cinematic Corporate</h2>
+    <p>Full-screen video hero slider, Ken Burns imagery, animated counters, testimonial fader, parallax CTA.</p>
+    <span class="go">View concept</span>
+  </a>
+  <a class="concept" href="talanta-editorial.html">
+    <span class="num">Concept 02</span>
+    <h2>Editorial Split-Screen</h2>
+    <p>Magazine layout: section rail, mask-reveal imagery, technology film block, horizontal insights slider.</p>
+    <span class="go">View concept</span>
+  </a>
+</nav>
+
+<footer>&copy; 2026 TALANTA Advisory &amp; Transformation &mdash; internal design review</footer>
+
+</body>
+</html>

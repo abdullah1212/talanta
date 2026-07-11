@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- TALANTA favicon: the gold A on brand navy -->
+  <rect width="64" height="64" rx="12" fill="#0C2340"/>
+  <path fill="#C8A95B" fill-rule="evenodd" d="
+    M26 12 L38 12 L56 54 L43.5 54 L40 45 L24 45 L20.5 54 L8 54 Z
+    M32 23.5 L27.2 36 L36.8 36 Z"/>
+</svg>

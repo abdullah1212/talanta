@@ -1,0 +1,107 @@
+/* ============================================================
+   TALANTA — shared design tokens & core components
+   Single source of truth consumed by every page.
+   Load order: bootstrap.min.css → talanta.css → page <style>.
+   ============================================================ */
+:root{
+  /* color */
+  --tal-navy:      #0C2340;   /* TALANTA Navy — HEX per brand guidelines */
+  --tal-navy-soft: #14335C;   /* derived tint for layering on navy */
+  --tal-navy-deep: #081729;   /* derived shade for footers */
+  --tal-gold:      #C8A95B;   /* TALANTA Gold — HEX per brand guidelines */
+  --tal-gold-ink:  #826C30;   /* text gold: AA (4.6:1+) on white and light tints */
+  --tal-gold-dim:  rgba(200,169,91,.35);
+  --tal-charcoal:  #444444;
+  --tal-gray:      #F5F5F5;
+
+  /* type ramp */
+  --font-latin: 'Montserrat', -apple-system, sans-serif;
+  --fs-h2:      clamp(1.7rem, 3.6vw, 2.6rem);
+  --fs-h3:      1.25rem;
+  --fs-card:    1.15rem;   /* card titles over imagery */
+  --fs-eyebrow: .72rem;
+  --fs-label:   .78rem;
+  --fs-small:   .8rem;
+
+  /* tracking — four tiers only */
+  --track-nav:     .06em;
+  --track-btn:     .12em;
+  --track-label:   .2em;
+  --track-eyebrow: .32em;
+
+  /* motion */
+  --tal-dur:  .8s;
+  --tal-ease: cubic-bezier(.2,.7,.3,1);
+
+  /* bootstrap theme */
+  --bs-body-font-family: var(--font-latin);
+  --bs-body-color: var(--tal-charcoal);
+  --bs-body-line-height: 1.7;
+  --bs-border-radius: 2px;   /* near-square: institutional, not app-like */
+}
+.bg-tal-gray{ background-color: var(--tal-gray); }
+
+/* focus — gold by default; white on gold surfaces so the ring never vanishes */
+:focus-visible{ outline: 2px solid var(--tal-gold); outline-offset: 3px; }
+.btn-tal-gold:focus-visible{ outline: 2px solid #fff; outline-offset: 3px; }
+
+/* ---------------- eyebrow ---------------- */
+.eyebrow{
+  font-family: var(--font-latin);
+  font-weight: 500;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--tal-gold-ink);
+}
+.on-dark .eyebrow{ color: var(--tal-gold); }
+
+/* ---------------- buttons — one spec, 4px grid ---------------- */
+.btn{
+  font-weight: 600;
+  font-size: .85rem;
+  letter-spacing: var(--track-btn);
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+}
+.btn-sm{ padding: .5rem 1.25rem; font-size: .72rem; }
+.btn-tal-gold{
+  --bs-btn-bg: var(--tal-gold); --bs-btn-color: var(--tal-navy); --bs-btn-border-color: var(--tal-gold);
+  --bs-btn-hover-bg: #fff; --bs-btn-hover-color: var(--tal-navy); --bs-btn-hover-border-color: #fff;
+  --bs-btn-active-bg: var(--tal-gold); --bs-btn-active-color: var(--tal-navy); --bs-btn-active-border-color: var(--tal-gold);
+}
+.btn-tal-outline{
+  --bs-btn-bg: transparent; --bs-btn-color: #fff; --bs-btn-border-color: rgba(255,255,255,.5);
+  --bs-btn-hover-bg: transparent; --bs-btn-hover-color: var(--tal-gold); --bs-btn-hover-border-color: var(--tal-gold);
+  --bs-btn-active-bg: transparent; --bs-btn-active-color: var(--tal-gold); --bs-btn-active-border-color: var(--tal-gold);
+}
+
+/* ---------------- contact form on navy ---------------- */
+.tal-form .form-label{
+  color: rgba(255,255,255,.85);
+  font-size: var(--fs-label); font-weight: 600;
+  letter-spacing: var(--track-btn); text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+.tal-form .form-control{
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.28);
+  color: #fff;
+  border-radius: var(--bs-border-radius);
+  padding: .75rem 1rem;
+}
+.tal-form .form-control:focus{
+  background: rgba(255,255,255,.11);
+  border-color: var(--tal-gold);
+  box-shadow: 0 0 0 .2rem rgba(200,169,91,.25);
+  color: #fff;
+}
+.cta-alt{ color: rgba(255,255,255,.65); font-size: .85rem; }
+.cta-alt a{ color: var(--tal-gold); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------- reveal on scroll — one motion spec ---------------- */
+.reveal{ opacity: 0; transform: translateY(22px); transition: opacity var(--tal-dur) ease, transform var(--tal-dur) var(--tal-ease); }
+.reveal.in{ opacity: 1; transform: none; }
+.d1{ transition-delay: .12s } .d2{ transition-delay: .24s } .d3{ transition-delay: .36s }
+@media (prefers-reduced-motion: reduce){ .reveal{ opacity: 1; transform: none; transition: none; } }
+.no-js .reveal{ opacity: 1 !important; transform: none !important; }

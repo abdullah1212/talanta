@@ -1,0 +1,5 @@
+# local tooling config
+.claude/
+
+# internal documents — the Pages repo is public; keep brand docs off it
+Website design guidelines.docx
