@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 96" role="img" aria-label="TALANTA — Advisory and Transformation">
+  <!-- Horizontal lockup for navy/dark backgrounds.
+       NOTE: wordmark uses Montserrat via <text> — renders correctly wherever Montserrat is loaded
+       (all site pages load it). For print/standalone export, outline the text in Figma/Illustrator. -->
+  <g transform="translate(0,12) scale(0.75)">
+    <path fill="#C8A95B" d="M48 12 L76 82 H67.4 L48 33.6 L28.6 82 H20 Z"/>
+    <rect fill="#C8A95B" x="12" y="56" width="72" height="8"/>
+  </g>
+  <g font-family="Montserrat, Arial, sans-serif">
+    <text x="92" y="52" font-size="30" font-weight="800" letter-spacing="9.6" fill="#FFFFFF">T<tspan fill="#C8A95B">A</tspan>L<tspan fill="#C8A95B">A</tspan>NT<tspan fill="#C8A95B">A</tspan></text>
+    <text x="93" y="72" font-size="9.5" font-weight="500" letter-spacing="4" fill="#FFFFFF" fill-opacity="0.65">ADVISORY &amp; TRANSFORMATION</text>
+  </g>
+</svg>

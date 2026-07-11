@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 96" role="img" aria-label="TALANTA — Advisory and Transformation">
+  <!-- Horizontal lockup for white/light backgrounds. Gold A's use the ink gold (#826C30)
+       so the wordmark stays readable on paper — bright gold is reserved for dark surfaces.
+       NOTE: outline the Montserrat text for print/standalone export. -->
+  <g transform="translate(0,12) scale(0.75)">
+    <path fill="#0C2340" d="M48 12 L76 82 H67.4 L48 33.6 L28.6 82 H20 Z"/>
+    <rect fill="#C8A95B" x="12" y="56" width="72" height="8"/>
+  </g>
+  <g font-family="Montserrat, Arial, sans-serif">
+    <text x="92" y="52" font-size="30" font-weight="800" letter-spacing="9.6" fill="#0C2340">T<tspan fill="#826C30">A</tspan>L<tspan fill="#826C30">A</tspan>NT<tspan fill="#826C30">A</tspan></text>
+    <text x="93" y="72" font-size="9.5" font-weight="500" letter-spacing="4" fill="#5A6B80">ADVISORY &amp; TRANSFORMATION</text>
+  </g>
+</svg>

@@ -109,6 +109,7 @@ h1,h2,h3{ font-weight:800; color:var(--navy); line-height:1.1; letter-spacing:-.
   display:flex; flex-direction:column; align-items:center; justify-content:space-between;
   padding-block:1.4rem; background:var(--paper);
 }
+.rail-top{ display:flex; flex-direction:column; align-items:center; gap:1rem; }
 .rail .rail-logo{ font-weight:800; letter-spacing:.3em; font-size:.82rem; color:var(--navy); text-decoration:none; writing-mode:vertical-rl; }
 .rail .rail-logo .a{ color:var(--gold-ink); }
 .rail-idx{ list-style:none; display:flex; flex-direction:column; gap:1.3rem; }
@@ -118,6 +119,11 @@ h1,h2,h3{ font-weight:800; color:var(--navy); line-height:1.1; letter-spacing:-.
   text-decoration:none; writing-mode:vertical-rl; transition:color .25s;
 }
 .rail-idx a.active, .rail-idx a:hover{ color:var(--gold-ink); }
+/* short laptop screens: the full labels overflow the rail — collapse to numbers only */
+@media (max-height: 899.98px){
+  .rail-idx a .lbl{ display:none; }
+  .rail-idx{ gap:1rem; }
+}
 .rail-mail{ font-size:.7rem; color:rgba(12,35,64,.45); text-decoration:none; writing-mode:vertical-rl; letter-spacing:.12em; }
 .rail-mail:hover{ color:var(--gold-ink); }
 .page{ margin-left:var(--rail-w); }
@@ -131,7 +137,7 @@ h1,h2,h3{ font-weight:800; color:var(--navy); line-height:1.1; letter-spacing:-.
     background:rgba(250,249,246,.92); backdrop-filter:blur(8px);
     border-bottom:1px solid rgba(12,35,64,.1); padding:.85rem 1.25rem;
   }
-  .topbar .tb-logo{ font-weight:800; letter-spacing:.3em; font-size:.9rem; color:var(--navy); text-decoration:none; }
+  .topbar .tb-logo{ display:inline-flex; align-items:center; gap:.55rem; font-weight:800; letter-spacing:.3em; font-size:.9rem; color:var(--navy); text-decoration:none; }
   .topbar .tb-logo .a{ color:var(--gold-ink); }
   .topbar .tb-cta{ font-size:.68rem; font-weight:600; letter-spacing:var(--track-label); text-transform:uppercase; color:var(--gold-ink); text-decoration:none; }
   main{ padding-top:3.4rem; }
@@ -371,20 +377,23 @@ h1,h2,h3{ font-weight:800; color:var(--navy); line-height:1.1; letter-spacing:-.
 
 <!-- ================= LEFT RAIL (desktop) ================= -->
 <nav class="rail" aria-label="Section index">
-  <a class="rail-logo" href="#intro">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></a>
+  <div class="rail-top">
+    <img src="assets/logo/talanta-mark-light.svg" alt="" width="26" height="26">
+    <a class="rail-logo" href="#intro">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></a>
+  </div>
   <ul class="rail-idx" id="railIdx">
-    <li><a href="#intro"        data-sec="intro">01 — Intro</a></li>
-    <li><a href="#approach"     data-sec="approach">02 — Approach</a></li>
-    <li><a href="#technology"   data-sec="technology">03 — Technology</a></li>
-    <li><a href="#perspectives" data-sec="perspectives">04 — Perspectives</a></li>
-    <li><a href="#contact"      data-sec="contact">05 — Contact</a></li>
+    <li><a href="#intro"        data-sec="intro">01<span class="lbl"> — Intro</span></a></li>
+    <li><a href="#approach"     data-sec="approach">02<span class="lbl"> — Approach</span></a></li>
+    <li><a href="#technology"   data-sec="technology">03<span class="lbl"> — Technology</span></a></li>
+    <li><a href="#perspectives" data-sec="perspectives">04<span class="lbl"> — Perspectives</span></a></li>
+    <li><a href="#contact"      data-sec="contact">05<span class="lbl"> — Contact</span></a></li>
   </ul>
   <a class="rail-mail" href="mailto:hello@talanta.example">hello@talanta.example</a>
 </nav>
 
 <!-- ================= TOP BAR (mobile) ================= -->
 <div class="topbar">
-  <a class="tb-logo" href="#intro">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></a>
+  <a class="tb-logo" href="#intro"><img src="assets/logo/talanta-mark-light.svg" alt="" width="22" height="22"><span>T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></span></a>
   <a class="tb-cta" href="#contact">Start a conversation</a>
 </div>
 
