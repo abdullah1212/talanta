@@ -605,15 +605,21 @@ h1,h2,h3{ font-weight:800; color:var(--tal-navy); line-height:1.12; letter-spaci
 (function(){
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Preloader: hide on load (min 900ms, max 3.5s) ---------- */
-  const pl = document.getElementById('preloader');
-  const t0 = performance.now();
-  function hidePl(){
-    const wait = Math.max(0, (reduced ? 200 : 900) - (performance.now() - t0));
-    setTimeout(() => { pl.classList.add('done'); document.body.classList.remove('is-loading'); }, wait);
+  /* ---------- Preloader: hide only after the page has loaded AND the
+     bar animation (the longest element, ~2.3s) has fully completed ---------- */
+  const pl  = document.getElementById('preloader');
+  const bar = pl.querySelector('.pl-bar span');
+  let plLoaded = false, plAnimDone = reduced;    // reduced motion: no animation to wait for
+  function tryHidePl(){
+    if (!plLoaded || !plAnimDone) return;
+    pl.classList.add('done');
+    document.body.classList.remove('is-loading');
   }
-  window.addEventListener('load', hidePl);
-  setTimeout(hidePl, 3500);                      // hard cap: never trap the user
+  window.addEventListener('load', () => { plLoaded = true; tryHidePl(); });
+  bar.addEventListener('animationend', () => {
+    setTimeout(() => { plAnimDone = true; tryHidePl(); }, 300);   // brief settle at 100%
+  });
+  setTimeout(() => { plLoaded = plAnimDone = true; tryHidePl(); }, 4500);   // hard cap: never trap the user
 
   /* ---------- Nav: solid after scroll, and while the mobile menu is open ---------- */
   const nav = document.getElementById('siteNav');
