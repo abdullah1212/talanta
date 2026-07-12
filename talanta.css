@@ -41,6 +41,17 @@
 }
 .bg-tal-gray{ background-color: var(--tal-gray); }
 
+/* Scroll lock without the ~15px layout jolt on release. Chromium reserves no
+   scrollbar gutter for overflow:hidden (even with scrollbar-gutter:stable), so
+   hiding overflow during the preloader removed the scrollbar and shifted the
+   layout when it came back. Instead: keep the scrollbar rendered during the
+   lock (overflow-y:scroll) and clamp body to the viewport height — nothing
+   overflows, so the page cannot scroll, and the width never changes. */
+html{ scrollbar-gutter: stable; }
+html:has(body.is-loading){ overflow-y: scroll; }
+body.is-loading{ overflow: hidden; height: 100vh; }
+.no-js body.is-loading{ overflow: auto; height: auto; }   /* no JS ever removes the class */
+
 /* focus — gold by default; white on gold surfaces so the ring never vanishes */
 :focus-visible{ outline: 2px solid var(--tal-gold); outline-offset: 3px; }
 .btn-tal-gold:focus-visible{ outline: 2px solid #fff; outline-offset: 3px; }
