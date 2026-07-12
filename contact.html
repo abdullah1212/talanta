@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — TALANTA</title>
+<meta name="description" content="Start the conversation with TALANTA — schedule a discovery session with our Riyadh-based advisory team.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="talanta.css">
+<script>document.documentElement.classList.remove('no-js');</script>
+
+<style>
+/* Contact — page-specific */
+h1,h2,h3{ font-weight:800; color:var(--tal-navy); line-height:1.12; letter-spacing:-.01em; }
+
+.steps{ background:var(--tal-navy-soft); }
+.steps .inner{ padding-block:clamp(2.5rem,5vw,3.5rem); }
+.step h3{ color:#fff; font-size:1rem; margin-bottom:.4rem; }
+.step p{ color:rgba(255,255,255,.75); font-size:.9rem; margin:0; }
+.step .n{ font-weight:800; font-size:1.6rem; color:var(--tal-gold); line-height:1; margin-bottom:.6rem; }
+
+.contact-wrap{ background:var(--tal-navy); }
+.info-label{ display:block; font-size:.72rem; font-weight:600; letter-spacing:var(--track-label); text-transform:uppercase; color:var(--tal-gold); margin:1.5rem 0 .35rem; }
+.info-label:first-child{ margin-top:0; }
+.info-val, .info-val a{ color:rgba(255,255,255,.85); font-size:.98rem; text-decoration:none; }
+.info-val a:hover{ color:var(--tal-gold); }
+.pdpl-note{ color:rgba(255,255,255,.5); font-size:.78rem; }
+</style>
+</head>
+<body>
+
+<a class="visually-hidden-focusable" href="#main">Skip to main content</a>
+
+<!-- ================= NAV ================= -->
+<nav class="site-nav solid" aria-label="Main">
+  <div class="container-xl d-flex flex-wrap align-items-center justify-content-between">
+    <a href="talanta-homepage.html" class="brand-word">
+      <img src="assets/logo/talanta-mark.svg" alt="" width="34" height="34">
+      <span class="brand-text">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span>
+        <span class="brand-sub">Advisory &amp; Transformation</span></span>
+    </a>
+    <button class="nav-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks"
+            aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">
+      <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1h20M1 8h20M1 15h20"/></svg>
+    </button>
+    <div class="collapse d-md-flex align-items-md-center gap-md-4 nav-links" id="navLinks">
+      <a class="nav-a" href="about.html">About</a>
+      <a class="nav-a" href="services.html">Services</a>
+      <a class="nav-a" href="team.html">Team</a>
+      <a class="nav-a" href="contact.html" aria-current="page">Contact</a>
+      <a class="btn btn-tal-gold btn-sm nav-cta-btn" href="#contactForm">Discovery Session</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ================= PAGE HERO ================= -->
+<header class="page-hero">
+  <div class="container-xl">
+    <span class="eyebrow">Contact</span>
+    <h1>Start the conversation</h1>
+    <p class="lede">A discovery session is a structured first step — not a sales call. We listen, assess where you stand, and outline what alignment would take.</p>
+  </div>
+</header>
+
+<!-- ================= WHAT TO EXPECT ================= -->
+<section class="steps" aria-label="What to expect">
+  <div class="container-xl inner">
+    <div class="row g-4">
+      <div class="col-12 col-md-4 step reveal">
+        <div class="n" aria-hidden="true">01</div>
+        <h3>45 minutes, senior people</h3>
+        <p>You meet a partner, not a sales team. In person in Riyadh or by video.</p>
+      </div>
+      <div class="col-12 col-md-4 step reveal d1">
+        <div class="n" aria-hidden="true">02</div>
+        <h3>We listen and ask</h3>
+        <p>Your challenge, in your words — then the questions that test where the real constraint sits.</p>
+      </div>
+      <div class="col-12 col-md-4 step reveal d2">
+        <div class="n" aria-hidden="true">03</div>
+        <h3>You leave with a view</h3>
+        <p>A written point of view on what we heard — whether or not you engage us. No obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORM + DETAILS ================= -->
+<section class="contact-wrap tal-section-pad on-dark">
+  <div class="container-xl">
+    <div class="row g-5 align-items-start">
+
+      <div class="col-12 col-lg-7">
+        <form id="contactForm" class="tal-form">
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <label class="form-label" for="cfName">Name</label>
+              <input class="form-control" type="text" id="cfName" name="name" autocomplete="name" required>
+            </div>
+            <div class="col-12 col-sm-6">
+              <label class="form-label" for="cfOrg">Organization</label>
+              <input class="form-control" type="text" id="cfOrg" name="organization" autocomplete="organization">
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="cfEmail">Work Email</label>
+              <input class="form-control" type="email" id="cfEmail" name="email" autocomplete="email" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="cfMsg">What would you like to address?</label>
+              <textarea class="form-control" id="cfMsg" name="message" rows="5" required></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-tal-gold" type="submit">Schedule a Discovery Session</button>
+            </div>
+          </div>
+        </form>
+        <p class="cta-alt mt-3 mb-2">Submitting opens a pre-filled email in your mail app &mdash; no data is sent to a server.</p>
+        <p class="pdpl-note mb-0">Your details are used only to respond to your inquiry, in line with the Kingdom&rsquo;s Personal Data Protection Law (PDPL).</p>
+      </div>
+
+      <div class="col-12 col-lg-5 reveal d1">
+        <!-- PLACEHOLDER contact details — replace phone, WhatsApp, and address with real ones -->
+        <span class="info-label">Email</span>
+        <span class="info-val"><a href="mailto:hello@talanta.example">hello@talanta.example</a></span>
+
+        <span class="info-label">Phone</span>
+        <span class="info-val"><a href="tel:+966110000000">+966 11 000 0000</a></span>
+
+        <span class="info-label">WhatsApp Business</span>
+        <span class="info-val"><a href="https://wa.me/966500000000" target="_blank" rel="noopener">+966 50 000 0000</a></span>
+
+        <span class="info-label">Office</span>
+        <span class="info-val">King Abdullah Financial District (KAFD)<br>Riyadh, Saudi Arabia<br>
+          <a href="https://maps.google.com/?q=King+Abdullah+Financial+District+Riyadh" target="_blank" rel="noopener">View on map</a></span>
+
+        <span class="info-label">Hours</span>
+        <span class="info-val">Sunday &ndash; Thursday, 9:00 &ndash; 18:00 (AST)</span>
+
+        <span class="info-label">LinkedIn</span>
+        <!-- TODO: replace with the real company page URL before launch -->
+        <span class="info-val"><a href="https://www.linkedin.com/company/talanta-advisory" target="_blank" rel="noopener">TALANTA Advisory &amp; Transformation</a></span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container-xl">
+    <div class="row g-4 gy-5 mb-5">
+      <div class="col-12 col-md-5">
+        <img src="assets/logo/talanta-mark.svg" alt="" width="40" height="40" class="d-block mb-3">
+        <span class="foot-word">T<span class="a">A</span>L<span class="a">A</span>NT<span class="a">A</span></span>
+        <span class="foot-desc">Advisory &amp; Transformation</span>
+        <span class="foot-method">Assess &bull; Align &bull; Achieve</span>
+        <p class="foot-tagline">Aligning Ambition with Achievement</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h3 class="foot-h">Explore</h3>
+        <a class="foot-link" href="about.html">About</a>
+        <a class="foot-link" href="services.html">Services</a>
+        <a class="foot-link" href="team.html">Team</a>
+        <a class="foot-link" href="contact.html">Contact</a>
+      </div>
+      <div class="col-6 col-md-4">
+        <h3 class="foot-h">Contact</h3>
+        <a class="foot-link" href="mailto:hello@talanta.example">hello@talanta.example</a>
+        <!-- TODO: replace with the real company page URL before launch -->
+        <a class="foot-link" href="https://www.linkedin.com/company/talanta-advisory" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="foot-text">Riyadh, Saudi Arabia</span>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 TALANTA Advisory &amp; Transformation. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+(function(){
+  const els = document.querySelectorAll('.reveal');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(e => e.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: .12 });
+    els.forEach(e => io.observe(e));
+  }
+
+  /* Contact form: composes a pre-filled email (static site, no backend yet) */
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const subject = 'Discovery Session Request — ' + v('cfName');
+    const body = ['Name: ' + v('cfName'), 'Organization: ' + (v('cfOrg') || '—'),
+                  'Email: ' + v('cfEmail'), '', v('cfMsg')].join('\n');
+    window.location.href = 'mailto:hello@talanta.example?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>
