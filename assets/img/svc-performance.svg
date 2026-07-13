@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Performance: a measured trend line rises and crosses the target">
+  <!-- TALANTA brand illustration — Performance Excellence: measurement that changes behavior -->
+  <defs>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.4" fill="rgba(255,255,255,.06)"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0C2340"/>
+  <rect width="800" height="600" fill="url(#dots)"/>
+
+  <!-- axes -->
+  <line x1="110" y1="120" x2="110" y2="480" stroke="rgba(255,255,255,.4)" stroke-width="3"/>
+  <line x1="110" y1="480" x2="720" y2="480" stroke="rgba(255,255,255,.4)" stroke-width="3"/>
+
+  <!-- target line -->
+  <line x1="110" y1="205" x2="720" y2="205" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-dasharray="6 10"/>
+
+  <!-- measured bars -->
+  <rect x="150" y="392" width="56" height="88"  fill="#14335C" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="246" y="360" width="56" height="120" fill="#14335C" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="342" y="378" width="56" height="102" fill="#14335C" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="438" y="312" width="56" height="168" fill="#14335C" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="534" y="262" width="56" height="218" fill="#14335C" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+  <rect x="630" y="188" width="56" height="292" fill="#14335C" stroke="rgba(255,255,255,.14)" stroke-width="2"/>
+
+  <!-- gold trend -->
+  <path d="M178 372 L274 340 L370 356 L466 292 L562 240 L658 166" fill="none" stroke="#C8A95B" stroke-width="6"/>
+  <circle cx="178" cy="372" r="7" fill="#C8A95B"/>
+  <circle cx="274" cy="340" r="7" fill="#C8A95B"/>
+  <circle cx="370" cy="356" r="7" fill="#C8A95B"/>
+  <circle cx="466" cy="292" r="7" fill="#C8A95B"/>
+  <circle cx="562" cy="240" r="7" fill="#C8A95B"/>
+  <circle cx="658" cy="166" r="9" fill="#C8A95B"/>
+  <circle cx="658" cy="166" r="20" fill="none" stroke="rgba(200,169,91,.45)" stroke-width="2.5"/>
+
+  <!-- balance signature -->
+  <g transform="translate(706,536) scale(0.28)" opacity=".2">
+    <path fill="#fff" d="M48 12 L76 82 H67.4 L48 33.6 L28.6 82 H20 Z"/>
+    <rect fill="#fff" x="12" y="56" width="72" height="8"/>
+  </g>
+</svg>

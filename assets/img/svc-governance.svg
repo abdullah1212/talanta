@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Governance: a decision structure with a clear golden path from the board to execution">
+  <!-- TALANTA brand illustration — Governance: decision rights with owners -->
+  <defs>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.4" fill="rgba(255,255,255,.06)"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="#0C2340"/>
+  <rect width="800" height="600" fill="url(#dots)"/>
+
+  <!-- charter frame -->
+  <rect x="70" y="70" width="660" height="460" fill="none" stroke="rgba(200,169,91,.3)" stroke-width="2"/>
+
+  <!-- connectors -->
+  <path d="M400 186 L210 260" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/>
+  <path d="M400 186 L590 260" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/>
+  <path d="M210 304 L160 410" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/>
+  <path d="M210 304 L280 410" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/>
+  <path d="M590 304 L520 410" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/>
+  <path d="M590 304 L640 410" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/>
+  <!-- the accountable path: gold -->
+  <path d="M400 186 L400 260 M400 304 L400 410" fill="none" stroke="#C8A95B" stroke-width="5"/>
+
+  <!-- tier 1: the owner of the decision -->
+  <rect x="368" y="122" width="64" height="64" fill="#C8A95B"/>
+  <!-- tier 2 -->
+  <rect x="184" y="260" width="52" height="44" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3"/>
+  <rect x="374" y="260" width="52" height="44" fill="none" stroke="#C8A95B" stroke-width="3.5"/>
+  <rect x="564" y="260" width="52" height="44" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3"/>
+  <!-- tier 3 -->
+  <rect x="142" y="410" width="38" height="34" fill="#14335C" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+  <rect x="262" y="410" width="38" height="34" fill="#14335C" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+  <rect x="381" y="410" width="38" height="34" fill="#C8A95B"/>
+  <rect x="502" y="410" width="38" height="34" fill="#14335C" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+  <rect x="622" y="410" width="38" height="34" fill="#14335C" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
+
+  <!-- balance signature -->
+  <g transform="translate(706,536) scale(0.28)" opacity=".2">
+    <path fill="#fff" d="M48 12 L76 82 H67.4 L48 33.6 L28.6 82 H20 Z"/>
+    <rect fill="#fff" x="12" y="56" width="72" height="8"/>
+  </g>
+</svg>
